@@ -1,14 +1,22 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./Utilities/Theme";
-import { MainBody } from "./Styles/Global.styled.js";
+import { MainBody, Container } from "./Styles/Global.styled.js";
 
-const App = () => {
+//Components
+import Showcase from "./Components/Showcase";
+import MySkills from "./Components/MySkills";
+function App() {
   return (
     <ThemeProvider theme={theme}>
-      <MainBody />
+      <MainBody>
+        <Container>
+          <Showcase />
+          <MySkills />
+        </Container>
+      </MainBody>
     </ThemeProvider>
   );
-};
+}
 
 export default App;
