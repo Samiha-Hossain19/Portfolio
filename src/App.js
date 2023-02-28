@@ -1,8 +1,14 @@
 import React from "react";
-import "./App.css";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./Utilities/Theme";
+import { MainBody } from "./Styles/Global.styled.js";
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <ThemeProvider theme={theme}>
+      <MainBody />
+    </ThemeProvider>
+  );
 };
 
 export default App;
