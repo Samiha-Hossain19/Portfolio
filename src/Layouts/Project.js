@@ -14,12 +14,11 @@ import {
   TechStackCard,
   ProjectImage,
 } from "../Styles/MyProjects.styled";
-import Project1 from "../assets/Project1.png";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { fadeInLeftVariant, fadeInRightVariant } from "../Utilities/Variants";
 
-const Project = ({ rowReverse }) => {
+const Project = ({ data, rowReverse }) => {
   return (
     <FlexContainer rowReverse={rowReverse ? true : false} fullWidthChild>
       <ProjectContentContainer
@@ -31,7 +30,7 @@ const Project = ({ rowReverse }) => {
         <div>
           <FlexContainer align="center" gap="1rem">
             <Heading as="h3" size="h3" bottom="1rem">
-              Project Name
+              {data.project_name}
             </Heading>
             <IconContainer color="blue" size="2rem">
               <FaGithub />
@@ -40,11 +39,27 @@ const Project = ({ rowReverse }) => {
 
           <PaddingContainer top="1rem">
             <FlexContainer gap="1.5rem">
-              <TechStackCard>Technology</TechStackCard>
+              {data.tech_stack.map((stack) => (
+                <TechStackCard>{stack}</TechStackCard>
+              ))}
             </FlexContainer>
           </PaddingContainer>
+          <ParaText top="1.5rem" bottom="2rem">
+            {data.project_desc}
+          </ParaText>
+          <Button>Visit Website</Button>
         </div>
       </ProjectContentContainer>
+
+      <ProjectImageContainer
+        justify={rowReverse ? "flex-start" : "flex-end"}
+        as={motion.div}
+        variants={rowReverse ? fadeInLeftVariant : fadeInRightVariant}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <ProjectImage src={data.project_img} alt="data.project_name" />
+      </ProjectImageContainer>
     </FlexContainer>
   );
 };
