@@ -7,6 +7,7 @@ import { MainBody, Container } from "./Styles/Global.styled.js";
 import Showcase from "./Components/Showcase";
 import MySkills from "./Components/MySkills";
 import MyProjects from "./Components/MyProjects";
+import Footer from "./Components/Footer";
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -15,6 +16,7 @@ function App() {
           <Showcase />
           <MySkills />
           <MyProjects />
+          <Footer />
         </Container>
       </MainBody>
     </ThemeProvider>
