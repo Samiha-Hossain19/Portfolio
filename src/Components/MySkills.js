@@ -58,10 +58,10 @@ const MySkills = () => {
 
           <ParaText top="2rem" bottom="1.5rem">
             As a developer, I have a wide range of experience in front-end web
-            development. I am proficient in JavaScript, React, Angular, HTML,
-            and CSS. My strong experience in building responsive and dynamic
-            user interfaces using React and Redux has allowed me to create
-            engaging and interactive web applications.
+            development. I am proficient in JavaScript, React, HTML, and CSS. My
+            strong experience in building responsive and dynamic user interfaces
+            using React and Redux has allowed me to create engaging and
+            interactive web applications.
           </ParaText>
 
           <ParaText>
